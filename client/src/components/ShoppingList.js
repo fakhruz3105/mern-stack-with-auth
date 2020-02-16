@@ -52,8 +52,8 @@ const ShoppingList = () => {
                   size="sm"
                   style={isAuthenticated ? null : { display: "none" }}
                   onClick={() => {
+                    if (amount === 1) onDismiss();
                     dispatch(editAmountAction({ id: _id, amount: amount + 1 }));
-                    // console.log({ id: _id, amount: amount+1 })
                   }}
                 >
                   &#43;

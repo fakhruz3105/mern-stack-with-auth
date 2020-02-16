@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { loginUserAction } from "../actions/authActions";
 import { clearErrors } from "../actions/errorActions";
 import { useSelector, useDispatch } from "react-redux";
@@ -29,10 +29,10 @@ export default function LoginModal() {
     } // eslint-disable-next-line
   }, [isAuthenticated]);
 
-  const toggle = () => {
+  const toggle = useCallback(() => {
     setModal(!modal);
     dispatch(clearErrors());
-  };
+  }, [modal, dispatch]);
 
   const onChange = e => {
     setUser({
