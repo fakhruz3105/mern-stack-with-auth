@@ -26,5 +26,6 @@
 }
 
 .navLink {
-  display: contents;
+  display: inline-flex;
+  margin-right: 1rem;
 }
